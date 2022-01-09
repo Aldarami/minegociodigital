@@ -19,7 +19,7 @@ class VentaProductoGestion extends Component
     public function render()
     {
         /** @var Illuminate\Support\Collection $productos */
-        $productos = Producto::orderBy('nombre')->get();
+        $productos = Producto::orderBy('nombre')->vendible()->get();
         $productosVenta = $this->venta->productos;
         // Filtra ya vendidos
         $productos = $productos->reject(function( $producto ) use ( $productosVenta )
