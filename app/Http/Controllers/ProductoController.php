@@ -105,7 +105,7 @@ class ProductoController extends Controller
             // Guardar producto
             $producto->update($datos);
             // Guardar historial
-            HistoriaEvent::dispatch( 'Registro', 
+            HistoriaEvent::dispatch( 'Actualización', 
                 Historia::TIPO_ACTUALIZACION, 
                 Producto::class, 
                 $producto->id, 

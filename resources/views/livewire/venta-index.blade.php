@@ -22,13 +22,13 @@
                                 {{__('Nombre')}}
                             </th>
                             <th>
-                                {{__('Descripción')}}
+                                {{__('Cliente')}}
                             </th>
                             <th>
-                                {{ __('Precio') }}
+                                {{__('Estado')}}
                             </th>
                             <th>
-                                {{ __('Costo') }}
+                                {{__('Fecha realizada')}}
                             </th>
                             <th>
                                 {{ __('Opciones') }}
@@ -36,25 +36,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ( $productos as $producto )
+                        @foreach ( $ventas as $venta )
                             <tr>
                                 <td>
-                                    {{ $producto->nombre }}
+                                    {{ $venta->concepto }}
                                 </td>
                                 <td>
-                                    <small>{{ $producto->descripcion }}</small>
+                                    {{ $venta->cliente->nombre }}
                                 </td>
                                 <td>
-                                    $&nbsp;{{ number_format( $producto->costo, 2 ) }}
+                                    {{ $venta->estado() }}
                                 </td>
                                 <td>
-                                    $&nbsp;{{ number_format( $producto->precio, 2 ) }}
+                                    {{ $venta->fechaVenta() }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('producto.edit', $producto) }}" class="btn btn-outline-primary shadow-sm">
+                                    <a href="{{ route('venta.edit', $venta) }}" class="btn btn-outline-primary shadow-sm">
                                         <span>{{ __('Editar') }}</span>
                                     </a>
-                                    <a href="{{ route('producto.show', $producto) }}" class="btn btn-outline-info shadow-sm">
+                                    <a href="{{ route('venta.show', $venta) }}" class="btn btn-outline-info shadow-sm">
                                         <span>{{ __('Ver') }}</span>
                                     </a>
                                 </td>
@@ -63,10 +63,10 @@
                     </tbody>
                 </table>
                 <div>
-                    @if ( $productos->count() == 0 )
+                    @if ( $ventas->count() == 0 )
                         {{ __('Sin registros') }}
                     @endif
-                    {{ $productos->links() }}
+                    {{ $ventas->links() }}
                 </div>
             </div>
         </div>

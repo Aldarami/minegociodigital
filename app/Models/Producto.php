@@ -54,6 +54,14 @@ class Producto extends Model
         return __( $this->vendible ? "Sí" : "No" );
     }
 
+    /**
+     * Esta función solo puede ser llamada si viene de la relación con venta
+     */
+    public function total()
+    {
+        return $this->pivot->cantidad * $this->precio;
+    }
+
     public function scopeVendible( $query )
     {
         return $query->where('vendible', 1);

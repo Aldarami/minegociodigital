@@ -12,7 +12,7 @@ trait CambiosRegistro
             $valorActual = $this[$llave]; 
             if( $valor != $valorActual )
             {
-                $cambios .= $llave.": ".$valorActual." -> ".$valor." ";
+                $cambios .= $llave.": ".$valorActual." -> ".$valor.", ";
             }
         }
         return $cambios;

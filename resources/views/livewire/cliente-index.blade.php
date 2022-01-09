@@ -51,6 +51,9 @@
                     </tbody>
                 </table>
                 <div>
+                    @if ( $clientes->count() == 0 )
+                        {{ __('Sin registros') }}
+                    @endif
                     {{ $clientes->links() }}
                 </div>
             </div>

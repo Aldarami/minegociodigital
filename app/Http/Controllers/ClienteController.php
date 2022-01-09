@@ -103,7 +103,7 @@ class ClienteController extends Controller
             // Guardar cliente
             $cliente->update($datos);
             // Guardar historial
-            HistoriaEvent::dispatch( 'Registro', 
+            HistoriaEvent::dispatch( 'Actualización', 
                 Historia::TIPO_ACTUALIZACION, 
                 Cliente::class, 
                 $cliente->id, 

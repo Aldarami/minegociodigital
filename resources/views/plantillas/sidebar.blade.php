@@ -17,17 +17,22 @@
         <li class="nav-item {{ (request()->segment(1) == 'inicio') ? 'active' : '' }}">
             <a class="nav-link" href="/inicio">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Inicio</span></a>
+                <span>{{ __('inicio') }}</span></a>
         </li>
         <li class="nav-item {{ (request()->segment(1) == 'producto') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('producto.index') }}">
                 <i class="fas fa-fw fa-box"></i>
-                <span>Productos</span></a>
+                <span>{{ __('Productos') }}</span></a>
         </li>
         <li class="nav-item {{ (request()->segment(1) == 'cliente') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('cliente.index') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Clientes</span></a>
+                <span>{{ __('Clientes') }}</span></a>
+        </li>
+        <li class="nav-item {{ (request()->segment(1) == 'venta') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('venta.index') }}">
+                <i class="fas fa-fw fa-shopping-bag"></i>
+                <span>{{ __('Ventas') }}</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
