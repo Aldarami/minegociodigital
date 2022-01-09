@@ -74,6 +74,11 @@
                         @endif
                     </tr>
                     @endforeach
+                    <tr>
+                        <td class="text-end" colspan="4">
+                            {{ __('Total') }}: $&nbsp;{{ number_format( $venta->total(), 2 ) }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
