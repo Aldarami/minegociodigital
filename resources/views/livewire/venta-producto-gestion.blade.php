@@ -4,6 +4,7 @@
             <div class="col-sm-8 mb-3">
                 <label for="SelectProducto" class="form-label">{{ __('Producto') }}</label>
                 <select name="producto_id" id="SelectProducto" class="form-select" wire:model="productoId">
+                    <option value="">{{ __('Seleccione') }}</option>
                     @foreach ( $productos as $producto )
                         <option value="{{ $producto->id }}">{{ $producto->nombre }}</option>
                     @endforeach
